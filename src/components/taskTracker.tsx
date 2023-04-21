@@ -77,7 +77,7 @@ export default function TaskTracker() {
             }   
             
             sortList = sortList.filter(e => {
-                if (searchQuery.toString()) {
+                if (searchSelect.current) {
                     return e.title.toString().toLowerCase().includes(searchQuery.toString().toLowerCase()) || e.description.toString().toLowerCase().includes(searchQuery.toString().toLowerCase())
                 }
             })
