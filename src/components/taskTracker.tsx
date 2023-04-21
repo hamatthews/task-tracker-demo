@@ -1,6 +1,6 @@
 'use client';
 
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 
 import Navbar from './navbar';
 import Sidebar from './sidebar';
@@ -76,13 +76,19 @@ export default function TaskTracker() {
                     
             }   
             
-            sortList = sortList.filter(e => {
-                if (searchSelect.current) {
+            if (searchQuery) {
+                sortList = sortList.filter(e => {
                     return e.title.toString().toLowerCase().includes(searchQuery.toString().toLowerCase()) || e.description.toString().toLowerCase().includes(searchQuery.toString().toLowerCase())
-                }
-                else true;
-            })
-        }    
+                })
+            }
+
+        }
+
+        useEffect(() => {
+            if (editorIndex !== null) {
+                setSearchQuery('');
+            }
+        }, [editorIndex])
 
 
     return (

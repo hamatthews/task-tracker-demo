@@ -10,7 +10,7 @@ type taskEditorProps = {
     editorIndex: number,
     setEditorIndex: React.Dispatch<React.SetStateAction<number | null>>,
     sortList: taskFields[],
-    setTaskList: React.Dispatch<React.SetStateAction<taskFields[]>>,
+    setTaskList: React.Dispatch<React.SetStateAction<taskFields[]>>
 }
 
 export default function TaskEditor({editorIndex, setEditorIndex, sortList, setTaskList} : taskEditorProps) {

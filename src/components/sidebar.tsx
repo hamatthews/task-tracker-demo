@@ -12,7 +12,7 @@ export default function Sidebar({setEditorIndex, taskList, searchSelect, setSear
     const SearchBox = () => {
 
         const handleSearchButton = () => {
-            if (searchSelect.current) {
+            if (searchSelect.current && searchSelect.current.value) {
                 setSearchQuery(searchSelect.current.value)
             };
         }
