@@ -11,7 +11,7 @@ import styles from '../styles/TaskTracker.module.css';
 
 import {taskFields} from '../types/displayTypes';
 
-export default function() {
+export default function TaskTracker() {
 
     const [editorIndex, setEditorIndex] = useState<number | null>(null);
     const [taskList, setTaskList] = useState<taskFields[]>([]);
