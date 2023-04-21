@@ -17,8 +17,10 @@ export default function TaskEditor({editorIndex, setEditorIndex, sortList, setTa
 
     const taskData = sortList[editorIndex];
     const date = new Date();
-    const hours = date.getHours().toString();
-    const minutes = date.getMinutes().toString();
+    let hours = date.getHours().toString();
+    if (hours.length === 1) hours = 0 + hours;
+    let minutes = date.getMinutes().toString();
+    if (minutes.length === 1) minutes = 0 + minutes;
 
     const [titleValue, setTitleValue] = useState(taskData ? taskData.title : 'Untitled Task');
     const [dateValue, setDateValue] = useState(taskData ? taskData.date : new Date().toJSON().slice(0, 10));
