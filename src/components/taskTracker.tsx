@@ -80,6 +80,7 @@ export default function TaskTracker() {
                 if (searchSelect.current) {
                     return e.title.toString().toLowerCase().includes(searchQuery.toString().toLowerCase()) || e.description.toString().toLowerCase().includes(searchQuery.toString().toLowerCase())
                 }
+                else true;
             })
         }    
 
